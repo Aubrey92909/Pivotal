@@ -3,6 +3,8 @@ source 'http://rubygems.org'
 
 gem 'omniauth-facebook'
 
+gem "koala", "~> 1.10.0rc"
+
 gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
