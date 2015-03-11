@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  get 'signout', to: 'sessions#destroy', as: 'signout'
+  
   devise_for :user, :controllers => { :registration => "registration", :omniauth_callbacks => "omniauth_callbacks" }
   
   root 'logins#new#index'

@@ -2,7 +2,9 @@ source 'http://rubygems.org'
 
 gem 'omniauth'
 
-gem 'omniauth-facebook'
+gem 'omniauth-oauth2', '1.0.3'
+
+gem 'omniauth-facebook', '1.4.0'
 
 gem "koala", "~> 1.10.0rc"
 
