@@ -229,10 +229,7 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  
-  require "omniauth-facebook"
-  
-  config.omniauth :facebook, '1564871157089084', '75289c50fe030a666a59a3bef75d2ba5', {:scope => "offline_access, email"}
+
   
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
@@ -256,4 +253,9 @@ Devise.setup do |config|
   # When using omniauth, Devise cannot automatically set Omniauth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+  
+  FACEBOOK_CONFIG = YAML.load_file("#{::Rails.root}/config/a-facebook.yml")[::Rails.env]
+  
+  config.omniauth :facebook, ENV["app_id"], ENV["app_secret"]
+  
 end
